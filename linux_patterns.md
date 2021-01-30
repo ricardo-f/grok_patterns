@@ -12,8 +12,13 @@
 
 3 . **Linux PAM audit:**
 
+_Open Session:_
 ```
 %{SYSLOGTIMESTAMP:system.auth.timestamp} %{SYSLOGHOST:system.auth.hostname} %{DATA:system.auth.sudo.user} session opened for user %{USER:system.auth.sudo.user} by %{GREEDYDATA:system.auth.uid}
+```
+_Close Session_
+```
+%{SYSLOGTIMESTAMP:system.auth.timestamp} %{SYSLOGHOST:system.auth.hostname} %{DATA:system.auth.sudo.user} session closed for user %{USER:system.auth.sudo.user}
 ```
 
 4. **LINUX Useradd**
